@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neighbor-picked</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    scroll-behavior:smooth;
+}
+
+/* NAVBAR */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 50px;
+    background:#0a2540;
+    color:#fff;
+    position:sticky;
+    top:0;
+}
+
+nav h2{
+    color:#00d4ff;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin:0 15px;
+    cursor:pointer;
+    position:relative;
+}
+
+/* DROPDOWN */
+.dropdown{
+    display:none;
+    position:absolute;
+    top:30px;
+    background:#fff;
+    color:#000;
+    padding:10px;
+    border-radius:5px;
+}
+
+.dropdown div{
+    padding:8px 15px;
+    cursor:pointer;
+}
+
+.dropdown div:hover{
+    background:#f0f0f0;
+}
+
+nav ul li:hover .dropdown{
+    display:block;
+}
+
+/* HERO */
+.hero{
+    height:90vh;
+    background:linear-gradient(to right,#00c6ff,#0072ff);
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+}
+
+.hero h1{
+    font-size:50px;
+}
+
+.hero p{
+    margin:15px 0;
+}
+
+.hero button{
+    padding:10px 20px;
+    border:none;
+    background:#fff;
+    color:#0072ff;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+/* SECTIONS */
+section{
+    padding:60px 20px;
+    text-align:center;
+}
+
+.cards{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.card{
+    background:#fff;
+    margin:15px;
+    padding:20px;
+    width:250px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+/* CONTACT */
+input, textarea{
+    width:250px;
+    padding:10px;
+    margin:10px;
+}
+
+button{
+    padding:10px 20px;
+    background:#0072ff;
+    color:#fff;
+    border:none;
+    cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+    background:#0a2540;
+    color:#fff;
+    padding:20px;
+    text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <h2>NeighborPickd</h2>
+    <ul>
+        <li onclick="scrollToSection('home')">Home</li>
+        <li onclick="window.location.href='About.html'">About</li>
+
+        <li>Services
+            <div class="dropdown">
+                <div onclick="window.location.href='Buying&Selling.html'">
+    Buying & Selling
+</div>
+                <div onclick="scrollToSection('services')">Fast Delivery</div>
+                <div onclick="scrollToSection('services')">Local Services</div>
+            </div>
+        </li>
+
+        <li onclick="scrollToSection('contact')">Contact</li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero">
+    <h1>Pick What You Need, From People Next Door</h1>
+    <p>Buy, sell, and connect locally with trusted neighbors.</p>
+    <button onclick="scrollToSection('services')">Explore Services</button>
+</section>
+
+
+<!-- SERVICES -->
+<section id="services">
+    <h2>Services</h2>
+
+    <div class="cards">
+        <div class="card">🛍️ Buying & Selling</div>
+        <div class="card">🚚 Fast Delivery</div>
+        <div class="card">🔧 Local Services</div>
+        <div class="card">💬 Community Chat</div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2>Contact Us</h2>
+
+    <p>Email: support@neighborpickd.com</p>
+    <p>Phone: +1(816)885-8161</p>
+
+    
+</section>
+
+<!-- FOOTER -->
+<footer>
+    Home | About | Services | Contact
+    <br><br>
+    © 2026 NeighborPickd
+</footer>
+
+<script>
+function scrollToSection(id){
+    document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+
+
+
+
+
+</script>
+
+</body>
+</html>

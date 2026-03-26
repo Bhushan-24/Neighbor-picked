@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - Neighbor Picked</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background: #f5f7fa;
+    }
+
+    /* Navbar */
+    nav {
+        background: #2c3e50;
+        color: white;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav h2 {
+        color: #00d4ff;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+    }
+
+    nav ul li {
+        cursor: pointer;
+    }
+
+    nav ul li:hover {
+        color: #00d4ff;
+    }
+
+    /* Hero Section */
+    .hero {
+        background: linear-gradient(to right, #00d4ff, #0072ff);
+        color: white;
+        text-align: center;
+        padding: 80px 20px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        margin-top: 10px;
+        font-size: 18px;
+    }
+
+    /* Section */
+    .section {
+        padding: 50px 20px;
+        text-align: center;
+    }
+
+    .section h2 {
+        margin-bottom: 20px;
+        color: #2c3e50;
+    }
+
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .card {
+        background: white;
+        width: 300px;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        background: #00d4ff;
+        color: white;
+    }
+
+    /* Footer */
+    footer {
+        background: #2c3e50;
+        color: white;
+        text-align: center;
+        padding: 15px;
+        margin-top: 40px;
+    }
+
+    /* Animation */
+    .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: 1s;
+    }
+
+    .fade-in.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav>
+    <h2>NeighborPickd</h2>
+    <ul>
+                <li onclick="window.location.href='home.html'">Home</li>
+
+        <li onclick="scrollToSection('about')">About</li>
+       
+    </ul>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+    <h1>About Neighbor Picked</h1>
+    <p>Pick What You Need, From People Next Door</p>
+</div>
+
+<!-- About -->
+<section id="about" class="section fade-in">
+    <h2>About Us</h2>
+    <p>
+        Neighbor Picked is a community-based delivery platform that connects
+        people within neighborhoods to deliver items quickly and affordably.
+        We believe the fastest and most reliable delivery comes from someone nearby.
+    </p>
+</section>
+
+<!-- Vision -->
+<section id="vision" class="section fade-in">
+    <h2>Our Vision</h2>
+    <div class="cards">
+        <div class="card">Build strong neighborhood connections</div>
+        <div class="card">Enable fast local deliveries</div>
+        <div class="card">Create self-sustaining communities</div>
+    </div>
+</section>
+
+<!-- Mission -->
+<section id="mission" class="section fade-in">
+    <h2>Our Mission</h2>
+    <div class="cards">
+        <div class="card">Provide fast and reliable delivery</div>
+        <div class="card">Make services affordable</div>
+        <div class="card">Empower local delivery partners</div>
+    </div>
+</section>
+
+<!-- Goals -->
+<section id="goals" class="section fade-in">
+    <h2>Our Goals</h2>
+    <div class="cards">
+        <div class="card">Expand to multiple cities</div>
+        <div class="card">Grow trusted user network</div>
+        <div class="card">Enhance user experience</div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 Neighbor Picked | All Rights Reserved</p>
+</footer>
+
+<script>
+    // Smooth Scroll
+    function scrollToSection(id) {
+        document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Fade-in Animation on Scroll
+    const elements = document.querySelectorAll('.fade-in');
+
+    function showOnScroll() {
+        elements.forEach(el => {
+            const position = el.getBoundingClientRect().top;
+            const screenHeight = window.innerHeight;
+
+            if (position < screenHeight - 100) {
+                el.classList.add('show');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', showOnScroll);
+</script>
+
+</body>
+</html>
